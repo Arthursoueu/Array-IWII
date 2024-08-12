@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas-vindas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: seagreen;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .welcome-wrapper {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #fff;
+        }
+
+        .welcome-wrapper h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        #welcomeMessage {
+            margin-top: 20px;
+            font-size: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-wrapper">
+        <h1>Boas-vindas</h1>
+        <div class="input-box">
+            <input type="text" id="nome" placeholder="Insira seu nome">
+        </div>
+        <input type="button" class="btn" value="ENTRAR" onclick="mostrarMensagem()">
+        <p id="welcomeMessage"></p>
+    </div>
+
+    <script>
+        function mostrarMensagem() {
+            let nome = document.getElementById("nome").value;
+            let mensagem = document.getElementById("welcomeMessage");
+
+            if (nome) {
+                mensagem.innerHTML = "Bem-vindo(a), " + nome + "!";
+                mensagem.style.display = "block";
+            } else {
+                mensagem.innerHTML = "Por favor, insira seu nome.";
+                mensagem.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
